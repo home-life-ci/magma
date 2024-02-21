@@ -1,4 +1,5 @@
 trigger AccountTrigger on Account(after insert) {
+
     if (Trigger.isAfter && Trigger.isInsert) {
         List<Contact> contactsTC = new List<Contact>();
         for (Account acc : Trigger.new) {
@@ -20,4 +21,5 @@ trigger AccountTrigger on Account(after insert) {
             update accountsTU;
         }
     }
+    
 }
